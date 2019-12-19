@@ -107,7 +107,7 @@ class Car
     this.odometer += distance;
     this.tank -= distance / this.milesPerGallon;
   }
-};
+}
 
 /*
   TASK 3
@@ -129,6 +129,7 @@ class Lambdasian
     this.age = obj.age,
     this.location = obj.location
   }
+
   speak()
   {
     return `Hello my name is ${this.name}, I am from ${this.location}`;
@@ -149,8 +150,25 @@ class Lambdasian
         + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
-class Instructor {
+class Instructor extends Lambdasian
+{
+  constructor(obj)
+  {
+    super(obj)
+    this.specialty = obj.specialty,
+    this.favLanguage = obj.favLanguage,
+    this.catchPhrase = obj.catchPhrase
+  }
 
+  demo(subject)
+  {
+    return `Today we are learning about ${subject}`;
+  }
+
+  grade(student, subject)
+  {
+    return `${student.name} receives a perfect score on ${subject}`;
+  }
 }
 
 /*
